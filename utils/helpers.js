@@ -17,6 +17,7 @@ const calculateBMR = (gender, height_cm, weight_kg, activity_level) => {
   }
 };
 
+// calculates calorie needs based on BMR and health goal
 const calorieNeeds = (
   gender,
   height_cm,
@@ -36,7 +37,12 @@ const calorieNeeds = (
   return calculateBMR(gender, height_cm, weight_kg, activity_level);
 };
 
+// BMI helps to tell if a person is under weight, over weight, fit
 const calculateBMI = (weight_kg, height_cm) =>
   weight_kg / Math.sqrt(height_cm / 100);
 
-module.exports = { calculateBMI };
+const totalCal = (protein_g, carbs_g, fat_g) => {
+  return protein_g * 4 + carbs_g * 4 + fat_g * 9;
+};
+
+module.exports = { calculateBMI, calorieNeeds, calculateBMI, totalCal };

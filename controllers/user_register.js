@@ -63,7 +63,7 @@ const user_login_register = async (req, res) => {
       res.json({ token });
     } else {
       // Register new user
-      const bmi = calculateBMI(gender, height_cm, weight_kg, activity_level);
+      const bmi = calculateBMI(weight_kg, height_cm);
       const hashedPassword = await bcrypt.hash(password, 10);
       const user_id = await dao_create_user(email, hashedPassword);
       const userInfo = await dao_create_user_information(

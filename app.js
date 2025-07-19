@@ -2,13 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const bcrypt = require("bcrypt");
 const db = require("./db");
+const cors = require('cors');
+
 const { get_recipe } = require("./controllers/recipe");
 const { dao_check_user_exists, dao_create_user } = require("./dao/user");
 const { user_login_register } = require("./controllers/user_register");
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/try", async (req, res) => {

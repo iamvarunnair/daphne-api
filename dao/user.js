@@ -15,8 +15,8 @@ const dao_check_user_exists = (email) =>
     // use of sql parametr to prevent injection
     db.query(userExists, [email], (err, results) => {
       if (err) {
-        console.error("Error fetching users:", err);
-        reject("Error fetching users");
+        console.error("Error fetching:", err);
+        reject("Error fetching");
         return;
       }
       // resolve(results && results.length && results.length === 1 ? true : false);
@@ -30,8 +30,8 @@ const dao_create_user = (email, password_hash) =>
 
     db.query(userCreate, [email, password_hash], (err, user) => {
       if (err) {
-        console.error("Error fetching users:", err);
-        reject("Error fetching users");
+        console.error("Error fetching:", err);
+        reject("Error fetching");
         return;
       }
       resolve(user.insertId);
@@ -52,8 +52,8 @@ const dao_create_user_information = (
   new Promise((resolve, reject) => {
     db.query(userInfoAllSetInactive, [user_id], (err, _) => {
       if (err) {
-        console.error("Error fetching users:", err);
-        reject("Error fetching users");
+        console.error("Error fetching:", err);
+        reject("Error fetching");
         return;
       }
 
@@ -73,8 +73,8 @@ const dao_create_user_information = (
         ],
         (err, results) => {
           if (err) {
-            console.error("Error fetching users:", err);
-            reject("Error fetching users");
+            console.error("Error fetching:", err);
+            reject("Error fetching");
             return;
           }
           resolve(results);
