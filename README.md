@@ -106,7 +106,7 @@ Develop a Personalized diet planner based on BMI.
 
 ## Process Flow
 
-*(You may include a flowchart diagram here in your Markdown viewer or export to tools like Mermaid if needed.)*
+![screenshot](screenshot.png)
 
 ---
 
