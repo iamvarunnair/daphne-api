@@ -139,10 +139,16 @@ Develop a Personalized diet planner based on BMI.
 
 ---
 
-## Risks and Edge Cases
+## API List
 
-*(This section was listed in the index but content was not in the document. Add risks and edge cases as needed.)*
+- POST user/register: handles login iif user exists, if not create new user
+- GET user: handles fetching user data, included diet plan
+- UPDATE user: handles update for user details
 
+
+## Controller Function list
+
+- Check user exists
+- Add new user
+- Generate diet plan
 ---
-
-Let me know if you'd like this as a `.md` file download or want to include diagrams/tables.
